@@ -114,7 +114,6 @@ int main() {
     sp.n = root;
     sp.c = 0;
     TNode* tmp;
-    int t1 = clock();
     for (int i = 0; i < s.length(); i++) {
         if (i == l - 1)
             i = i;
@@ -135,7 +134,6 @@ int main() {
     sp.n = root;
     sp.c = 0;
     int l1 = l;
-
     while (l > 0) {
         TNode* tmp = sp.n->next[(sp.n->next).begin()->first];
         if (tmp->len() <= l) {
@@ -152,20 +150,6 @@ int main() {
             l = 0;
         }
     }
-    int t2 = clock();
     cout << ans << endl;
-    string min2 = "";
-    for (int i = 1; i < s.length() - l1; i++) {
-        min2.clear();
-        for (int j = i; j < i + l1; j++) {
-            min2 += s[j];
-        }
-        if (min2 < min1 )
-            min1 = min2;
-    }
-    int t3 = clock();
-    cout << min1<< endl;
-    cout << t2 - t1 << endl << t3 - t2 << endl;
-    
     return 0;
 }
